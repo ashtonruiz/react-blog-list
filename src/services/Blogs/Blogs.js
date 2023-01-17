@@ -1,6 +1,6 @@
-import React from 'react';
+import { checkError, client } from '../client.js';
 
-export default function getBlogs() {
-    const response = await client.from;
-
+export default async function getBlogs() {
+  const response = await client.from('blogs').select('*');
+  return checkError(response);
 }
